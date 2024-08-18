@@ -16,7 +16,13 @@ import cookieParser from "cookie-parser";
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin :["https://karunai-kerala-6m5sx1s3o-manvith-ms-projects.vercel.app/"],
+  methods:["POST" ,"GET"],
+  credentials:true
+
+}));
+
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
